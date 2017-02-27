@@ -8,24 +8,26 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "browserify": "13.1.0",
     "browser-sync": "^2.18.7",
-    "gulp": "^3.9.1",
-    "gulp-run": "^1.7.1",
+    "browserify": "13.1.0",
     "eslint": "3.6.1",
     "font-awesome": "4.6.3",
-    "preboot": "git+https://github.com/mdo/preboot.git#4aab4edd85f076d50609cbe28e4fe66cc0771701",
     "gitbook-logos": "git+https://github.com/GitbookIO/logos.git#2.0.2",
     "gitbook-markdown-css": "1.0.1",
-    "jquery": "3.1.1",
+    "gulp": "^3.9.1",
+    "gulp-run": "^1.7.1",
+    "jquery": "2.2.4",
     "less": "2.7.1",
     "less-plugin-clean-css": "1.5.1",
+    "materialize-css": "^0.98.0",
     "mousetrap": "1.6.0",
+    "preboot": "git+https://github.com/mdo/preboot.git#4aab4edd85f076d50609cbe28e4fe66cc0771701",
     "uglify-js": "2.7.3"
   },
   "scripts": {
     "start": "gulp",
-    "prepublish": "./src/build.sh"
+    "prepublish": "./src/build.sh",
+    "postinstall": "cp node_modules/materialize-css/js/date_picker/picker.js node_modules/materialize-css/bin"
   },
   "repository": {
     "type": "git",

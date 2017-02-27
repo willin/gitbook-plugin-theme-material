@@ -1,5 +1,5 @@
 var $ = require('jquery');
-
+require('materialize-css/bin/materialize.js');
 var events  = require('./events');
 var storage = require('./storage');
 var page = require('./page');

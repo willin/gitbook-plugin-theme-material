@@ -11,13 +11,14 @@ mkdir -p $DIR/../_assets/website/
 mkdir -p $DIR/../_assets/ebook/
 
 # Compile JS
-browserify $DIR/js/core/index.js | uglifyjs -mc > $DIR/../_assets/website/gitbook.js
+browserify $DIR/js/core/index.js  | uglifyjs -mc > $DIR/../_assets/website/gitbook.js
 browserify $DIR/js/theme/index.js | uglifyjs -mc > $DIR/../_assets/website/theme.js
+# echo '\n/*Willin*/' >> $DIR/../_assets/website/gitbook.js
+# uglifyjs $DIR/../node_modules/materialize-css/bin/materialize.js >> $DIR/../_assets/website/gitbook.js
 
 # Compile Website CSS
 # lessc -clean-css less/website.less _assets/website/style.css
-cp $DIR/material/css/materialize.min.css $DIR/../_assets/website/style.css
-lessc 
+lessc -clean-css $DIR/material/css/main.less $DIR/../_assets/website/style.css
 
 # Compile eBook CSS
 lessc -clean-css $DIR/less/ebook.less $DIR/../_assets/ebook/ebook.css
@@ -26,9 +27,9 @@ lessc -clean-css $DIR/less/mobi.less $DIR/../_assets/ebook/mobi.css
 lessc -clean-css $DIR/less/epub.less $DIR/../_assets/ebook/epub.css
 
 # Copy fonts
-#mkdir -p _assets/website/fonts
-#cp -R node_modules/font-awesome/fonts/ _assets/website/fonts/fontawesome/
+mkdir -p $DIR/../_assets/website/fonts
 cp -R $DIR/material/fonts/ $DIR/../_assets/website/fonts/
+cp -R $DIR/../node_modules/materialize-css/fonts/ $DIR/../_assets/website/fonts/
 
 # Copy icons
 mkdir -p $DIR/../_assets/website/images

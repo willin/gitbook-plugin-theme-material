@@ -27,58 +27,70 @@
 {% endblock %}
 
 {% block body %}
-<div class="book">
-    <div class="book-summary">
-        {% block book_sidebar %}
-            {% block search_input %}{% endblock %}
-            {% block book_summary %}
-                <div role="navigation">
-                {% include "website/summary.html" %}
-                </div>
-            {% endblock %}
-        {% endblock %}
-    </div>
-
-    <div class="book-body">
-        {% block book_body %}
-            <div class="body-inner">
-                {% block book_inner %}
-                    {% include "website/header.html" %}
-
-                    <div class="page-wrapper" tabindex="-1" role="main">
-                        <div class="page-inner">
-                            {% block search_results %}
-                                <section class="normal markdown-section">
-                                {% block page %}
-                                {{ page.content|safe }}
-                                {% endblock %}
-                                </section>
-                            {% endblock %}
-                        </div>
+<main style="display:none">
+    <div class="book">
+        <div class="book-summary">
+            {% block book_sidebar %}
+                {% block search_input %}{% endblock %}
+                {% block book_summary %}
+                    <div role="navigation">
+                    {% include "website/summary.html" %}
                     </div>
                 {% endblock %}
-            </div>
-
-            {% block book_navigation %}
-                {% if page.previous and page.previous.path %}
-                <a href="{{ page.previous.path|resolveFile }}{{ page.previous.anchor }}" class="navigation navigation-prev {% if not (page.next and page.next.path) %}navigation-unique{% endif %}" aria-label="Previous page: {{ page.previous.title }}">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-                {% endif %}
-                {% if page.next and page.next.path %}
-                <a href="{{ page.next.path|resolveFile }}{{ page.next.anchor }}" class="navigation navigation-next {% if not (page.previous and page.previous.path) %}navigation-unique{% endif %}" aria-label="Next page: {{ page.next.title }}">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-                {% endif %}
             {% endblock %}
-        {% endblock %}
-    </div>
+        </div>
 
-    <script>
-        var gitbook = gitbook || [];
-        gitbook.push(function() {
-            gitbook.page.hasChanged({{ template.getJSContext()|dump|safe }});
-        });
-    </script>
-</div>
+        <div class="book-body">
+            {% block book_body %}
+                <div class="body-inner">
+                    {% block book_inner %}
+                        {% include "website/header.html" %}
+
+                        <div class="page-wrapper" tabindex="-1" role="main">
+                            <div class="page-inner">
+                                {% block search_results %}
+                                    <section class="normal markdown-section">
+                                    {% block page %}
+                                    {{ page.content|safe }}
+                                    {% endblock %}
+                                    </section>
+                                {% endblock %}
+                            </div>
+                        </div>
+                    {% endblock %}
+                </div>
+
+                {% block book_navigation %}
+                    {% if page.previous and page.previous.path %}
+                    <a href="{{ page.previous.path|resolveFile }}{{ page.previous.anchor }}" class="navigation navigation-prev {% if not (page.next and page.next.path) %}navigation-unique{% endif %}" aria-label="Previous page: {{ page.previous.title }}">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    {% endif %}
+                    {% if page.next and page.next.path %}
+                    <a href="{{ page.next.path|resolveFile }}{{ page.next.anchor }}" class="navigation navigation-next {% if not (page.previous and page.previous.path) %}navigation-unique{% endif %}" aria-label="Next page: {{ page.next.title }}">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                    {% endif %}
+                {% endblock %}
+            {% endblock %}
+        </div>
+
+        <script>
+            var gitbook = gitbook || [];
+            gitbook.push(function() {
+                gitbook.page.hasChanged({{ template.getJSContext()|dump|safe }});
+            });
+        </script>
+    </div>
+</main>
+
+<aside>
+    <div id="slide-out" class="side-nav fixed">
+        <ul>
+            <li><a href="#!">First Sidebar Link</a></li>
+            <li><a href="#!">Second Sidebar Link</a></li>
+        </ul> 
+    </div>
+    <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+</aside>
 {% endblock %}

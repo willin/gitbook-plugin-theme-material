@@ -1,4 +1,4 @@
-var dropdown =   require('./dropdown');
+var dropdown = require('./dropdown');
 var keyboard =   require('./keyboard');
 var navigation = require('./navigation');
 var sidebar =    require('./sidebar');
