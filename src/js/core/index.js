@@ -1,5 +1,4 @@
 var $ = require('jquery');
-require('materialize-css/bin/materialize.js');
 var events  = require('./events');
 var storage = require('./storage');
 var page = require('./page');
@@ -35,7 +34,10 @@ var MODULES = {
 window.gitbook = gitbook;
 window.$ = $;
 window.jQuery = $;
-window.require = function(mods, fn) {
+
+require('materialize-css/bin/materialize.js');
+
+window.require = function (mods, fn) {
     mods = mods.map(function(mod) {
         mod = mod.toLowerCase();
         if (!MODULES[mod]) {
