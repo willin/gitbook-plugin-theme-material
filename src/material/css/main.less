@@ -61,3 +61,78 @@ header, main, footer {
     padding-left: 0;
   }
 }
+
+.book{
+    padding: 50px;
+}
+
+#top-button{
+    position: fixed;
+    left: 5px;
+    top: 5px;
+}
+
+.markdown-section li {
+    padding: 5px 5px 5px 1em;
+    list-style: circle outside;
+    position: relative;
+}
+
+.markdown-section li:before {
+    font-family: 'Material Icons';
+    display: block;
+    width: 1em;
+    content: 'outline_label';
+    position: absolute;
+    left: -9em;
+}
+
+.markdown-section blockquote,.markdown-section code,.markdown-section figure,.markdown-section img,.markdown-section pre,.markdown-section table,.markdown-section tr {
+    page-break-inside: avoid
+}
+
+.markdown-section code,.markdown-section pre {
+    font-family: Consolas,"Liberation Mono",Menlo,Courier,monospace;
+    direction: ltr;
+    margin: 0;
+    padding: 0;
+    border: none;
+    color: inherit
+}
+
+.markdown-section pre {
+    overflow: auto;
+    word-wrap: normal;
+    margin: 0;
+    padding: .85em 1em;
+    margin-bottom: 1.275em;
+    background: #f7f7f7
+}
+
+.markdown-section pre>code {
+    display: inline;
+    max-width: initial;
+    padding: 0;
+    margin: 0;
+    overflow: initial;
+    line-height: inherit;
+    font-size: .85em;
+    white-space: pre;
+    background: 0 0
+}
+
+.markdown-section pre>code:after,.markdown-section pre>code:before {
+    content: normal
+}
+
+.markdown-section code {
+    padding: .2em;
+    margin: 0;
+    font-size: .85em;
+    background-color: #f7f7f7
+}
+
+.markdown-section code:after,.markdown-section code:before {
+    letter-spacing: -.2em;
+    content: "\00a0"
+}

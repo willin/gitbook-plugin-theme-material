@@ -9,7 +9,7 @@
   "dependencies": {},
   "devDependencies": {
     "browser-sync": "^2.18.7",
-    "browserify": "13.1.0",
+    "browserify": "^14.1.0",
     "eslint": "3.6.1",
     "font-awesome": "4.6.3",
     "gitbook-logos": "git+https://github.com/GitbookIO/logos.git#2.0.2",

@@ -1,4 +1,6 @@
-var $ = require('jquery');
+// var $ = require('jquery');
+var $ = require('materialize-css/node_modules/jquery/dist/jquery.js');
+
 var events  = require('./events');
 var storage = require('./storage');
 var page = require('./page');
@@ -52,7 +54,9 @@ window.require = function (mods, fn) {
 
 $(document).ready(function() {
     isPageReady = true;
-
+    
+    $('.button-collapse').sideNav();
+    $('.active').parent('.collapsible-body').show().parent('li').addClass('active');
     // Call pile of function once GitBook is ready
     $.each(onLoad, function(i, fn) {
         fn();

@@ -13,7 +13,6 @@ var state = {};
 function hasChanged(ctx) {
     console.log('page has changed', ctx); // eslint-disable-line no-console
     setState(ctx);
-
     if (!started) {
         // Notify that gitbook is ready
         started = true;
