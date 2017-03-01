@@ -3,7 +3,7 @@
         <li class="chapter {% if article.path == file.path and not article.anchor %}active{% endif %}" data-level="{{ article.level }}" {% if article.path %}data-path="{{ article.path|resolveFile }}"{% endif %}>
             {% if article.articles.length > 0 %}
                 <ul class="articles collapsible popout" data-collapsible="accordion">
-                    <li><a class="collapsible-header waves-effect waves-teal" href="#">{{ article.title }}</a>
+                    <li><a class="collapsible-header waves-effect waves-teal">{{ article.title }}</a>
                         <ul class="collapsible-body">
                             {{ articles(article.articles, file, config) }}
                         </ul>
