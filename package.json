@@ -18,7 +18,7 @@
     "gitbook-markdown-css": "1.0.1",
     "gulp": "^3.9.1",
     "gulp-run": "^1.7.1",
-    "jquery": "2.2.4",
+    "jquery": "3.5.0",
     "less": "2.7.1",
     "less-plugin-clean-css": "1.5.1",
     "mousetrap": "1.6.0",
